@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :pantry
-  resources :ingredient
-  resources :favorite
-  resources :note
+  resources :user
+  resources :ingredient, polymorhic: true
+  resources :recipe
+  
 
   get 'about', to: "static_pages#about", as: 'about'
   get 'test', to: "static_pages#test", as: 'test'
