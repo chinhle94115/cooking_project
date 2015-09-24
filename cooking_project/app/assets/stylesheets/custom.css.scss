@@ -1,0 +1,27 @@
+@import "bootstrap";
+@import "bootstrap-sprockets";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
+/* will only make it available for ?? */
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+
+.lora_font {
+font-family: 'Lora', serif;
+}
+.montserrat_font {
+font-family: 'Montserrat', sans-serif;
+}
+
+.abril_font {
+font-family: 'Abril Fatface', cursive;
+}
+
+.padding  li {
+  padding-left: 20px;
+  padding-right: 20px;
+}
