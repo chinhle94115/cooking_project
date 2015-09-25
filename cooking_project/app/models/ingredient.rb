@@ -1,12 +1,12 @@
 # == Schema Information
 #
-# Table name: refrigerators
+# Table name: ingredients
 #
 #  id         :integer          not null, primary key
-#  ingredient :string
+#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Refrigerator < ActiveRecord::Base
+class Ingredient < ActiveRecord::Base
 end
