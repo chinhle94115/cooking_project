@@ -12,4 +12,12 @@
 #
 
 class Recipe < ActiveRecord::Base
+
+def provider
+end
+
+def provider_id
+end
+
+
 end

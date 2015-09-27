@@ -3,12 +3,13 @@
     <h1 class="brand-heading"> Ingredients </h1>
   </div>
   <body>
-      <p class="brand heading"><%= form_tag("/ingredient", method: "post") do %>
+      <p class="brand heading">
+        <%= form_tag("/ingredients", method: "post") do %>
         <%  @ingredients.each do |ingredient| %>
         <%= check_box_tag(ingredient.name) %>
-        <%= label_tag(ingredient.name) %><br/>
+        <%= label_tag(ingredient.name) %><br/ >
         <% end %>
-        <%= link_to submit_tag("Let's Get Recipes!"), recipes_index_path, class: 'btn btn-md btn-warning'%></p>
+        <%= submit_tag("Let's Get Recipes")%>
   </body>
 
 <% end %>

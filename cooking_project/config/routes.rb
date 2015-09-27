@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
 
+  # get 'recipes/new'
+  #
+  # get 'recipes/index'
+  #
+  # get 'recipes/show'
+
   get 'user/new'
 
   devise_for :users
   resources :user
-  resources :ingredient, polymorhic: true
-  resources :recipe
+  resources :ingredients, polymorhic: true
+  resources :recipes
 
 
   get 'about', to: "static_pages#about", as: 'about'
