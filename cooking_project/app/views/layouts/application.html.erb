@@ -16,14 +16,14 @@
 
 
 </head>
-<body>
-  <body id="page-bottom" data-spy="scroll" data-target=".navbar-fixed-bottom">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <%= render 'layouts/main_nav' %>
 
     <%= yield %>
-
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 </body>
 <footer>
-  
+
 </footer>
 </html>

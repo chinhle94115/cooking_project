@@ -1,0 +1,14 @@
+<div class="panel-ingredients">
+  <div class="panel-heading">
+    <h1 class="brand-heading"> Ingredients </h1>
+  </div>
+  <body>
+      <p class="brand heading"><%= form_tag("/ingredient", method: "post") do %>
+        <%  @ingredients.each do |ingredient| %>
+        <%= check_box_tag(ingredient.name) %>
+        <%= label_tag(ingredient.name) %><br/>
+        <% end %>
+        <%= submit_tag("Submit") %></p>
+  </body>
+
+<% end %>

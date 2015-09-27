@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'user/new'
+
+  devise_for :users
   resources :user
   resources :ingredient, polymorhic: true
   resources :recipe
