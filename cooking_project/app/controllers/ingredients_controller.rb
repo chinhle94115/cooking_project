@@ -14,8 +14,10 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    @recipes = Ingredient.get_recipes(params)
-    redirect_to recipes_path(external_recipes: @recipes)
+    @ingredient = Ingredient.create(ingredient_params)
+    #@recipes = Recipe.get_recipes(params)
+
+    redirect_to new_ingredient_path
   end
 
   def update

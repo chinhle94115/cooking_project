@@ -85,6 +85,32 @@ a:focus {
     font-size: 32px;
 }
 
+.panel-newingredients {
+    display: table;
+    width: 100%;
+    height: auto;
+    padding: 250px 0;
+    text-align: center;
+    color: #fff;
+    background: url('ingredients.jpg') no-repeat bottom center scroll;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.intro .intro-body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.panel-newingredients .brand-heading {
+    font-size: 60px;
+}
+
+.panel-newingredients .body {
+    font-size: 32px;
+}
 @media(min-width:768px) {
     .intro {
         height: 100%;

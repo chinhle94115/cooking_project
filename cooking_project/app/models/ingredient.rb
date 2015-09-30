@@ -10,19 +10,15 @@
 
 class Ingredient < ActiveRecord::Base
 
+validates_uniqueness_of :name
+
   def self.ingredient_list(params)
     all_ingredients = Ingredient.all.pluck(:name)
     all_given_ingredients = params.keys & all_ingredients
-    all_given_ingredients.join(",")
+    ingredient_list = all_given_ingredients.join(",")
+    return ingredient_list
+
   end
 
-  def self.get_recipes(params)
-    ingredients = ingredient_list(params)
-    api_url = "food2fork.com/api/search.json"
-    api_key = "4fdc8cf04236d404b86477fc16b9cf50"
-    full_url = "#{api_url}?q=#{ingredients}&key=#{api_key}"
-    response = Typhoeus.get(full_url)
-    recipes = JSON.parse(response.body)["recipes"]
-    return recipes
-  end
+
 end

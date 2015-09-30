@@ -1,2 +1,15 @@
-<h1>Ingredients#new</h1>
-<p>Find me in app/views/ingredients/new.html.erb</p>
+<div class="panel-newingredients">
+  <div class="panel-heading">
+    <h1 class="brand-heading"> New Ingredient </h1>
+  </div>
+  <body>
+      <p class="brand heading">
+        <%= simple_form_for @ingredient do |f| %>
+          <%= f.input :name, label: false, input_html: {placeholder: "Let's Get your New Ingredient"} %>
+          <%= f.submit "Submit".html_safe, class: "btn btn-lg btn-warning" %>
+
+        <% end %>
+      </p>
+  </body>
+  </div>
+</div>

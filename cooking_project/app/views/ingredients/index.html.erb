@@ -4,12 +4,14 @@
   </div>
   <body>
       <p class="brand heading">
-        <%= form_tag("/ingredients", method: "post") do %>
+        <%= form_tag("/recipes", method: "post") do %>
+
         <%  @ingredients.each do |ingredient| %>
         <%= check_box_tag(ingredient.name) %>
-        <%= label_tag(ingredient.name) %><br/ >
+        <%= label_tag(ingredient.name) %>
+        <%= link_to 'Delete', ingredient, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-xs btn-danger' %><br/ >
         <% end %>
-        <%= submit_tag("Let's Get Recipes")%>
+        <%= submit_tag "Let's Get Recipes", :class => "btn btn-warning"%>
   </body>
 
 <% end %>
