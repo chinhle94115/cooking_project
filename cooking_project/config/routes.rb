@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'favorite_recipes/show'
+
+  get 'favorite_recipes/index'
+
   # get 'recipes/new'
   #
   # get 'recipes/index'
@@ -13,6 +17,7 @@ Rails.application.routes.draw do
   resources :ingredients, polymorhic: true
   resources :recipes
 
+  resources :favorite_recipes, only: [:create, :destroy]
 
   get 'about', to: "static_pages#about", as: 'about'
   get 'test', to: "static_pages#test", as: 'test'

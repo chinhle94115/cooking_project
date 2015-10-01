@@ -13,4 +13,6 @@
  *= require_tree .
  *= require grayscale
  *= require_self
+ *= require selectize
+ *= require selectize.default
  */

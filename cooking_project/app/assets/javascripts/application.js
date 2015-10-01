@@ -17,3 +17,4 @@
 //= require grayscale
 //= require turbolinks
 //= require_tree .
+//= require selectize

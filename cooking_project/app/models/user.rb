@@ -33,5 +33,7 @@ class User < ActiveRecord::Base
   #                   uniqueness: { case_sensitive: false }
   # has_secure_password
 
+  has_many :favorites
+  has_many :favorite_recipes, through: :favorites, source: :favorited, source_type: 'Recipe'
 
 end
