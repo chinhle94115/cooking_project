@@ -13,6 +13,8 @@
 
 class Recipe < ActiveRecord::Base
 
+  belongs_to :user
+
   validates_uniqueness_of :provider_id #no duplicate recipes from same provider
 
 

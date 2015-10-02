@@ -1,11 +1,56 @@
-<div class="carousel">
-  <h1 class="carousel"> Recipes </h1>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
 
-  <div class="well">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <p align="center"><img src=<%= image_tag(Recipe.first.image) %> <%= image_tag(Recipe.first.image, class: "img-responsive") %></p>
+      <div class="carousel-caption">
+        <p align="right"><%= Recipe.first.title.capitalize %></p>
+      </div>
+    </div>
+    <div class="item">
+      <p align="center"><img src=<%= image_tag(Recipe.second.image) %> <%= image_tag(Recipe.second.image, class: "img-responsive") %></p>
+      <div class="carousel-caption">
+        <p align="right"><%= Recipe.second.title.capitalize %></p>
+      </div>
+    </div>
+    <div class="item">
+      <p align="center"><img src=<%= image_tag(Recipe.third.image) %> <%= image_tag(Recipe.third.image, class: "img-responsive") %></p>
+      <div class="carousel-caption">
+        <p align="right"><%= Recipe.third.title.capitalize %></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+<div class="">
+  <h1 class="well"> Recipes </h1>
+
+  <div class="row">
     <%  @recipes.each do |recipe| %>
       <div class="col-xs-2">
         <p> <%= link_to"#{image_tag(recipe.try(:image), class: "img-responsive")}".html_safe, recipe.try(:source_url), target: "_blank"%></p>
-        <li style="color:#cc3333;"> <%=recipe.title %> </li>
+        <style="color:#fff;"> <%=recipe.title %>
+        <button type="button" class="btn btn-warning btn-xs">
+          <%=link_to "Add to Favorites", favorites_path(recipe), method: :post %></button>
       </div>
       <% end %>
   </div>

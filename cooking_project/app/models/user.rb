@@ -35,5 +35,5 @@ class User < ActiveRecord::Base
 
   has_many :favorites
   has_many :favorite_recipes, through: :favorites, source: :favorited, source_type: 'Recipe'
-
+  has_many :recipes
 end
